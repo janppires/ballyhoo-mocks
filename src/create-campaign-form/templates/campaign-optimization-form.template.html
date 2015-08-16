@@ -1,0 +1,17 @@
+<md-whiteframe class="md-whiteframe-z1 md-padding" layout="column" >
+    <md-toolbar layout="row" layout-align="space-around center"  class="">
+        <span flex ng-bind="'Optimization' | uppercase"></span>
+        <md-button class="md-raised" ng-click="resetFields()">
+            <small>Reset</small>
+        </md-button>
+    </md-toolbar>
+    <div layout="row">
+        <div>
+            <label class="md-caption">Exclude Apps</label>
+            <md-radio-group ng-model="campaignData.excludeApps" layout="row">
+                <md-radio-button ng-value="true">Include</md-radio-button>
+                <md-radio-button ng-value="false">Exclude</md-radio-button>
+            </md-radio-group>
+        </div>
+    </div>
+</md-whiteframe>

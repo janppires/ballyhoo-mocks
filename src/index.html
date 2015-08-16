@@ -1,0 +1,56 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <!-- Place favicon.ico in the root directory -->
+
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="https://gitcdn.xyz/repo/angular/bower-material/v0.10.1/angular-material.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <!--<script src="js/vendor/modernizr-2.8.3.min.js"></script>-->
+        <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>-->
+        <!--<script>window.jQuery || document.write('<script src="js/vendor/jquery-2.1.4.min.js"><\/script>')</script>-->
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-animate.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-aria.min.js"></script>
+        <script src="https://gitcdn.xyz/repo/angular/bower-material/v0.10.1/angular-material.js"></script>
+
+        <script src="initial-page/initial-page.module.js"></script>
+        <script src="initial-page/initial-page.controller.js"></script>
+
+        <script src="create-campaign-form/create-campaign-form.module.js"></script>
+        <script src="create-campaign-form/create-campaign-form.controller.js"></script>
+        <script src="create-campaign-form/create-campaign-form.directive.js"></script>
+
+        <script src="create-campaign-form/campaign-general-details-form.controller.js"></script>
+        <script src="create-campaign-form/campaign-general-details-form.directive.js"></script>
+
+        <script src="create-campaign-form/campaign-optimization-form.directive.js"></script>
+        <script src="create-campaign-form/campaign-budget-form.controller.js"></script>
+        <script src="create-campaign-form/campaign-budget-form.directive.js"></script>
+
+    </head>
+    <body ng-app="InitialPageModule" >
+
+        <!-- Add your site or application content here -->
+        <div class="md-padding">
+            <md-whiteframe class="md-whiteframe-z1 md-padding" layout="column" >
+                <md-content ng-controller="CreateCampaignFormController as ccfCtrl">
+                    <div layout="row" layout-wrap >
+                        <md-button class="md-primary md-raised" ng-click="ccfCtrl.showModal($event)" flex flex-md="100">
+                            Create Campaign
+                        </md-button>
+                    </div>
+                </md-content>
+            </md-whiteframe>
+        </div>
+    </body>
+</html>

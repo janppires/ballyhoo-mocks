@@ -1,0 +1,35 @@
+<md-dialog aria-label="Create Campaign">
+    <form>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Create Campaign</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="answer('not applicable')">
+                    <md-icon md-font-library="material-icons">close</md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <md-dialog-content>
+            <ng-form name="createCampaignForm">
+                <create-campaign-form >
+                    <div layout="row">
+                        <campaign-general-details-form></campaign-general-details-form>
+                        <div layout="column">
+                            <campaign-optimization-form></campaign-optimization-form>
+                            <campaign-budget-form></campaign-budget-form>
+                        </div>
+                    </div>
+                </create-campaign-form>
+            </ng-form>
+        </md-dialog-content>
+        <div class="md-actions" layout="row">
+            <md-button ng-click="cancel()" style="margin-right:20px;">
+                Cancel
+            </md-button>
+            <md-button type="submit" class="md-raise md-warn"  ng-disabled="createCampaignForm.$invalid">
+                Create {{campaignForm.$invalid}}
+            </md-button>
+
+        </div>
+    </form>
+</md-dialog>

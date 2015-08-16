@@ -1,0 +1,74 @@
+<md-whiteframe class="md-whiteframe-z1 md-padding" layout="column" >
+    <md-toolbar layout="row" layout-align="space-around center">
+        <span flex ng-bind="'Campaign' | uppercase"></span>
+        <md-button class="md-raised" ng-click="resetFields()">
+            <small>Reset</small>
+        </md-button>
+    </md-toolbar>
+    <md-input-container>
+        <label>Description</label>
+        <input ng-model="campaignData.description" required>
+    </md-input-container>
+    <div layout="row">
+        <div layout="column">
+            <div flex>
+                <label class="md-caption">Status</label>
+                <div layout="row" layout-align="space-around center">
+                    <md-switch ng-model="campaignData.status" aria-label="Status campaign">
+                    </md-switch>
+                    <label  ng-bind="campaignData.status ? 'Enabled' : 'Disabled'"></label>
+                </div>
+            </div>
+            <div flex>
+                <label class="md-caption">Lapsed Players</label>
+                <div layout="row" layout-align="space-around center">
+                    <md-switch ng-model="campaignData.lapsedPlayers" aria-label="Lapsed players">
+                    </md-switch>
+                    <label  ng-bind="campaignData.lapsedPlayers ? 'Enabled' : 'Disabled'"></label>
+                </div>
+            </div>
+        </div>
+        <span flex></span>
+        <div>
+            <label class="md-caption">Context</label>
+            <md-radio-group ng-model="campaignData.production">
+                <md-radio-button ng-value="true">Production</md-radio-button>
+                <md-radio-button ng-value="false">Research</md-radio-button>
+            </md-radio-group>
+        </div>
+    </div>
+    <div layout="row">
+        <md-input-container>
+            <label>Target Game</label>
+            <md-select name="targetGame" ng-model="campaignData.targetGame" ng-required>
+                <md-option ng-repeat="tg in cgdfController.targetGames" ng-value="tg.value" ng-bind="tg.name"></md-option>
+            </md-select>
+        </md-input-container>
+        <md-input-container flex>
+            <label>Country</label>
+            <md-select name="targetGame" ng-model="campaignData.country" required>
+                <md-option ng-repeat="c in cgdfController.countries" ng-value="c.value" ng-bind="c.name"></md-option>
+            </md-select>
+        </md-input-container>
+    </div>
+    <div layout="row">
+        <md-input-container>
+            <label>Device Type</label>
+            <md-select name="deviceType" ng-model="campaignData.deviceType" required>
+                <md-option ng-repeat="dt in cgdfController.devices" ng-value="dt.value" ng-bind="dt.name"></md-option>
+            </md-select>
+        </md-input-container>
+        <md-input-container flex>
+            <label>Campaign Type</label>
+            <md-select name="campaignType" ng-model="campaignData.campaignType" required>
+                <md-option ng-repeat="c in cgdfController.campaigns" ng-value="c.value" ng-bind="c.name"></md-option>
+            </md-select>
+        </md-input-container>
+    </div>
+    <md-input-container flex>
+        <label>Creative Packs</label>
+        <md-select name="creativePack" ng-model="campaignData.creativePack" required>
+            <md-option ng-repeat="cp in cgdfController.creativePacks" ng-value="cp.value" ng-bind="cp.name"></md-option>
+        </md-select>
+    </md-input-container>
+</md-whiteframe>

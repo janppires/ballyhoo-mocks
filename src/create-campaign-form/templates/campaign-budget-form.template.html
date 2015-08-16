@@ -1,0 +1,22 @@
+<md-whiteframe class="md-whiteframe-z1 md-padding" layout="column" >
+    <md-toolbar layout="row" layout-align="space-around center"  class="">
+        <span flex ng-bind="'Budget' | uppercase"></span>
+        <md-button class="md-raised" ng-click="resetFields()">
+            <small>Reset</small>
+        </md-button>
+    </md-toolbar>
+    <div layout="row">
+        <div>
+            <md-input-container>
+                <label>Daily Budget</label>
+                <input type="number" min="0" ng-model="campaignData.dailyBudget" required>
+            </md-input-container>
+            <md-input-container>
+                <label class="md-caption">Pacing</label>
+                <md-select name="pacing" ng-model="campaignData.pacing" required>
+                    <md-option ng-repeat="p in cbfCtrl.pacing" ng-value="p.value" ng-bind="p.name | uppercase"></md-option>
+                </md-select>
+            </md-input-container>
+        </div>
+    </div>
+</md-whiteframe>
